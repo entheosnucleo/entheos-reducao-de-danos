@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENTHEOS — Consulta Rápida de Redução de Danos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="brand-name-eq">ENTHEOS</span>
+        <span class="brand-sep">&amp;</span>
+        <span class="brand-name-eq">NatuFlora</span>
+      </div>
+      <nav class="main-nav">
+        <a href="#topo">Início</a>
+        <a href="#interacoes">Interações</a>
+        <a href="#substancias">Dosagens e Efeitos</a>
+        <a href="#cuidados">Dicas de Cuidado</a>
+        <a href="#roda-integracao">Roda de Integração</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INÍCIO -->
+    <section class="hero" id="topo">
+
+      <div class="hero-video-bg">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="assets/video/video-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+
+        <div class="hero-logos">
+          <img src="assets/img/logo-1.png" alt="Natuflora" class="hero-logo-img">
+          <span class="hero-logo-x">×</span>
+          <img src="assets/img/logo-2.png" alt="ENTHEOS" class="hero-logo-img">
+        </div>
+
+        <div class="hero-title-block">
+          <h1 class="hero-title">
+            <span class="hero-title-line hero-line-1">Redução de danos</span>
+            <span class="hero-title-line hero-line-2">Earthdance 2026</span>
+          </h1>
+          <p class="hero-title-line hero-line-3 hero-desc">
+            Informação salva vidas. Cuide-se, cuide de quem esta do seu lado.
+          </p>
+        </div>
+
+        <div class="hero-icons-row">
+          <a href="#interacoes" class="hero-icon-pill hero-icon-pill-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></svg>
+            <span>Verificador de Interações</span>
+          </a>
+          <a href="#substancias" class="hero-icon-pill hero-icon-pill-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c7-1 12-6 13-16-9 1-14 6-13 16Z"/><path d="M6 18c3-4 6-7 10-11"/></svg>
+            <span>Substâncias e Efeitos</span>
+          </a>
+          <a href="#cuidados" class="hero-icon-pill hero-icon-pill-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>Cuidados Preventivos</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VERIFICADOR DE INTERAÇÕES -->
+    <section id="interacoes" class="section">
+      <div class="container">
+        <h2>Verificador de Interações</h2>
+        <p class="section-intro">
+          Escolha duas substâncias para ver o nível de risco da combinação específica.
+        </p>
+
+        <div class="status-legend" id="statusLegend" aria-label="Legenda de níveis de risco"></div>
+
+        <hr class="interacao-divider">
+
+        <div class="interacao-checker">
+          <svg class="leaf-ornament leaf-top-left" viewBox="0 0 100 140" aria-hidden="true">
+            <path d="M50 130 C20 100 10 60 50 10 C90 60 80 100 50 130 Z"/>
+            <path d="M50 125 L50 20"/>
+            <path d="M50 95 C40 85 30 80 20 75"/>
+            <path d="M50 95 C60 85 70 80 80 75"/>
+            <path d="M50 65 C42 57 34 53 26 50"/>
+            <path d="M50 65 C58 57 66 53 74 50"/>
+          </svg>
+          <svg class="leaf-ornament leaf-bottom-right" viewBox="0 0 100 140" aria-hidden="true">
+            <path d="M50 130 C20 100 10 60 50 10 C90 60 80 100 50 130 Z"/>
+            <path d="M50 125 L50 20"/>
+            <path d="M50 95 C40 85 30 80 20 75"/>
+            <path d="M50 95 C60 85 70 80 80 75"/>
+            <path d="M50 65 C42 57 34 53 26 50"/>
+            <path d="M50 65 C58 57 66 53 74 50"/>
+          </svg>
+
+          <div class="interacao-picker">
+            <div class="interacao-card">
+              <label for="substanciaA">Substância A</label>
+              <div class="select-wrap">
+                <select id="substanciaA">
+                  <option value="">Selecione...</option>
+                </select>
+              </div>
+            </div>
+            <span class="interacao-plus" aria-hidden="true">+</span>
+            <div class="interacao-card">
+              <label for="substanciaB">Substância B</label>
+              <div class="select-wrap">
+                <select id="substanciaB">
+                  <option value="">Selecione...</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="resultadoInteracao" class="resultado-interacao">
+            <div class="estado-vazio" id="estadoVazio">
+              <svg class="olho-cipo" viewBox="0 0 100 60" aria-hidden="true">
+                <path d="M50 5 C20 5 5 30 5 30 C5 30 20 55 50 55 C80 55 95 30 95 30 C95 30 80 5 50 5 Z"/>
+                <circle cx="50" cy="30" r="14"/>
+                <circle cx="50" cy="30" r="6"/>
+              </svg>
+              <p>Escolha duas substâncias para ver o resultado</p>
+            </div>
+            <div class="estado-resultado" id="estadoResultado" hidden></div>
+          </div>
+        </div>
+
+        <p class="tripsit-disclaimer">
+          Dados baseados na base de combinações do TripSit (wiki.tripsit.me) — use como referência geral,
+          não como garantia de segurança. Combinações sempre aumentam o risco.
+        </p>
+      </div>
+    </section>
+
+    <!-- SUBSTÂNCIAS, EFEITOS E DOSAGENS -->
+    <section id="substancias" class="section section-alt">
+      <div class="substancias-video-bg">
+        <video class="substancias-video" autoplay muted loop playsinline>
+          <source src="assets/video/video-fundo.mp4" type="video/mp4">
+        </video>
+        <div class="substancias-video-overlay"></div>
+      </div>
+
+      <div class="container">
+        <h2>Substâncias, Efeitos e Dosagens</h2>
+
+        <div class="intro-rd">
+          <h3>Informação e Redução de Danos</h3>
+          <p>
+            Redução de Danos é uma abordagem de cuidado que parte de um princípio simples: o uso
+            de substâncias faz parte da realidade de muitas pessoas, e nem sempre parar é
+            possível ou é o que a pessoa quer. Por isso, a prioridade é reduzir os riscos
+            associados a esse uso, sem julgamento, em vez de exigir abstinência como única
+            resposta possível.
+          </p>
+          <p>
+            Informação de qualidade é uma das ferramentas mais poderosas de redução de danos:
+            saber o que se está consumindo, como o corpo reage, qual a via de uso mais segura e
+            quais combinações evitar muda diretamente o desfecho de uma experiência. Este espaço
+            reúne, substância por substância, o que a ciência e a experiência de redução de
+            danos já sabem — não para incentivar o uso, mas para que, se ele acontecer, aconteça
+            com o menor dano possível.
+          </p>
+        </div>
+
+        <div class="substance-accordion" id="substanceAccordion"></div>
+      </div>
+    </section>
+
+    <!-- CUIDADOS PREVENTIVOS -->
+    <section class="section cuidados-section" id="cuidados">
+      <div class="container">
+        <h2 class="section-title">Cuidados Preventivos</h2>
+        <p class="section-intro">
+          Redução de danos não é incentivo ao consumo — é cuidado real com quem já decidiu usar.
+          Toque em um dos ícones ao lado para abrir cada tema.
+        </p>
+
+        <div class="cuidados-layout">
+          <div class="cuidados-carousel-wrap">
+            <div class="cuidados-carousel-track" id="cuidadosCarousel">
+              <!-- ícones duplicados (x2) via js/cuidados-carousel.js, para o loop contínuo -->
+            </div>
+          </div>
+
+          <div class="cuidados-content" id="cuidadosContent">
+            <!-- preenchido via js/cuidados-carousel.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RODA DE INTEGRAÇÃO -->
+    <section id="roda-integracao" class="section">
+      <div class="container">
+        <h2>Roda de Integração</h2>
+
+        <div class="integracao-grid">
+          <div class="integracao-block">
+            <div class="integracao-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.5-.8L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.4 8.4 0 0 1 8.5-8.5 8.4 8.4 0 0 1 8.5 8.5Z"/></svg>
+            </div>
+            <h3>O que é</h3>
+            <p>Um espaço de escuta e estudo para quem viveu experiências com substâncias psicodélicas, no festival ou fora dele, e quer um lugar seguro para elaborar, compartilhar e aprender junto com outras pessoas. Não é terapia individual, é um círculo coletivo de integração e cuidado.</p>
+          </div>
+
+          <div class="integracao-block">
+            <div class="integracao-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>
+            </div>
+            <h3>Objetivo</h3>
+            <p>Criar continuidade para o cuidado que começa na Tenda de Redução de Danos: um espaço onde as experiências vividas no festival possam ser processadas com calma, apoio e informação de qualidade, em vez de ficarem soltas depois que a experiência acaba.</p>
+          </div>
+
+          <div class="integracao-block">
+            <div class="integracao-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 10h17"/><path d="M8 3v4M16 3v4"/></svg>
+            </div>
+            <h3>Como funciona</h3>
+            <p>Encontros mensais, online, abertos ao público geral. A participação é por contribuição voluntária, sem valor fixo, e ninguém fica de fora por questão financeira.</p>
+          </div>
+        </div>
+
+        <div class="integracao-cta">
+          <h3>Como participar</h3>
+          <p class="integracao-cta-text">
+            Preencha o formulário de inscrição com seus dados. Após o envio, nossa equipe
+            entrará em contato com você com mais informações sobre o próximo encontro.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3vtLOxViz-U1Gf0-mgJVWaHQD30GzwnRtz8ZChw_k9etyqQ/viewform?usp=dialog" target="_blank" rel="noopener" class="integracao-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+            Inscreva-se
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section section-alt">
+      <div class="container">
+        <h2>Onde nos encontrar</h2>
+        <p>
+          Tenda de Redução de Danos — Natuflora × ENTHEOS<br>
+          Testagem de substâncias · Acolhimento S.O.S. Psicodélico · Informação
+        </p>
+
+        <div class="onde-encontrar-social">
+          <a href="https://www.instagram.com/coletivonatuflora/" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+            @coletivonatuflora
+          </a>
+          <a href="https://www.instagram.com/entheosnucleo/" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+            @entheosnucleo
+          </a>
+        </div>
+
+        <p class="onde-encontrar-fechamento">
+          Segue a gente no Instagram para acompanhar os próximos passos dessa parceria e ficar
+          por dentro dos próximos encontros.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">
+        <span class="brand-name-eq">ENTHEOS</span>
+        <span class="brand-sep">&amp;</span>
+        <span class="brand-name-eq">NatuFlora</span>
+        — Núcleo de Integração Psicodélica e Redução de Danos
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/video-autoplay-fix.js"></script>
+  <script src="js/interacoes-dados.js"></script>
+  <script src="js/interacoes-checker.js"></script>
+  <script src="js/substancias-dados.js"></script>
+  <script src="js/substancias-accordion.js"></script>
+  <script src="js/cuidados-dados.js"></script>
+  <script src="js/cuidados-carousel.js"></script>
+</body>
+</html>
